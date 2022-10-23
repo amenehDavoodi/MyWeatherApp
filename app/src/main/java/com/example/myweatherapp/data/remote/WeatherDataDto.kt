@@ -3,6 +3,7 @@ package com.example.myweatherapp.data.remote
 import com.squareup.moshi.Json
 
 class WeatherDataDto(
+    @field:Json(name = "time")
     val time: List<String>,
     @field:Json(name = "pressure_msl")
     val pressure_msl: List<Double>,
