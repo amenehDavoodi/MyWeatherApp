@@ -15,7 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class WeatherViewModel @Inject constructor(
     val repository: WeatherRepository,
-    val locationTracker: LocationTracker
+    val locationTracker: LocationTracker,
+    val string: String
 ) :ViewModel(){
     var state by mutableStateOf(WeatherStates())
     private set

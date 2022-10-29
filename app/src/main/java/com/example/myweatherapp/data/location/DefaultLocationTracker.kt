@@ -1,11 +1,13 @@
 package com.example.myweatherapp.data.location
 
 import android.Manifest
+import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.myweatherapp.domain.location.LocationTracker
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -57,5 +59,16 @@ class DefaultLocationTracker @Inject constructor(
         }
     }
 
-    private fun getPermission() {}
+    private fun getPermission() {
+
+        ActivityCompat.requestPermissions(
+//            activity,
+            application.applicationContext as Activity,
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+            PERMISSION_REQUEST_ACCESS_FINE_LOCATION)
+//        return
+    }
+    companion object {
+        private const val PERMISSION_REQUEST_ACCESS_FINE_LOCATION = 100
+    }
 }

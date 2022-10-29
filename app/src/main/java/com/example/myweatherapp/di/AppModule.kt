@@ -31,4 +31,5 @@ object AppModule {
     {
         return LocationServices.getFusedLocationProviderClient(app)
     }
+
 }
