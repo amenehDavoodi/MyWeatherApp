@@ -14,9 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class WeatherViewModel @Inject constructor(
-    val repository: WeatherRepository,
-    val locationTracker: LocationTracker,
-    val string: String
+    private val repository: WeatherRepository,
+    private val locationTracker: LocationTracker
 ) :ViewModel(){
     var state by mutableStateOf(WeatherStates())
     private set
@@ -38,9 +37,7 @@ class WeatherViewModel @Inject constructor(
                         state=state.copy(
                             weatherInfo = result.data,
                             isLoading = false,
-                            error = null
-
-                        )
+                            error = null)
                     }
                     is Resource.Error ->{
                         state=state.copy(
