@@ -9,4 +9,5 @@ interface WeatherApi {
         @Query("latitude") lat:Double,
         @Query("longitude") log:Double
     ):WeatherDto
+
 }
