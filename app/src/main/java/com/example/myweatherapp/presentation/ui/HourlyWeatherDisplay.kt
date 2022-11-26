@@ -33,7 +33,7 @@ fun HourlyWeatherDisplay(
         Image( painter = painterResource(id = weatherData.weatherType.iconRes),
             contentDescription = null,
             modifier = Modifier.width(40.dp))
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         Text(
             text = "${weatherData.tempCel}C",
             fontSize = 20.sp,

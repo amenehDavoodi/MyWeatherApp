@@ -61,10 +61,10 @@ class MainActivity : ComponentActivity() {
                 if (viewModel.state.isLoading){
                     CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
                 }
-                    viewModel.state.error?.let{
-                        error->Toast.makeText(this@MainActivity,error,Toast.LENGTH_SHORT).show()
-
-                }
+//                    viewModel.state.error?.let{
+//                        error->Toast.makeText(this@MainActivity,error,Toast.LENGTH_SHORT).show()
+//
+//                }
                 }
             }
         }
