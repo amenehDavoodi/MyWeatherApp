@@ -30,13 +30,15 @@ fun HourlyWeatherDisplay(
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         Text(text = formattedTime, modifier = modifier, color = Color.LightGray)
-        Image( painter = painterResource(id = weatherData.weatherType.iconRes),
+        Image(
+            painter = painterResource(id = weatherData.weatherType.iconRes),
             contentDescription = null,
-            modifier = Modifier.width(40.dp))
-        Spacer(modifier = Modifier.height(10.dp))
+            modifier = Modifier.width(40.dp)
+        )
+
+//        Spacer(modifier = Modifier.height(10.dp))
         Text(
             text = "${weatherData.tempCel}C",
-            fontSize = 20.sp,
             color = textColor,
             fontWeight = FontWeight.Bold
         )

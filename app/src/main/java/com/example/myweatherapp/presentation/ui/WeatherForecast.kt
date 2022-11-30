@@ -35,8 +35,8 @@ fun WeatherForecast(
                 {  WeatherData ->
                     HourlyWeatherDisplay(
                         weatherData = WeatherData,
-                        modifier = Modifier.height(120.dp)
-                            .padding(16.dp)
+                        modifier = Modifier.height(100.dp)
+                            .padding(horizontal=16.dp)
                     )
                 }
             })
