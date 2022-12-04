@@ -11,7 +11,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.myweatherapp.domain.weather.WeatherData
 import java.time.format.DateTimeFormatter
 
@@ -22,14 +21,21 @@ fun HourlyWeatherDisplay(
     textColor: Color = Color.White
 ) {
     val formattedTime = remember(weatherData) {
-        weatherData.time.format(DateTimeFormatter.ofPattern("HH:MM"))
+        weatherData.time.format(
+            DateTimeFormatter.ofPattern("HH:MM")
+        )
     }
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        Text(text = formattedTime, modifier = modifier, color = Color.LightGray)
+        Text(
+            text = formattedTime,
+            color = Color.LightGray
+        )
+//        Spacer(modifier = Modifier.height(10.dp))
+
         Image(
             painter = painterResource(id = weatherData.weatherType.iconRes),
             contentDescription = null,
@@ -38,7 +44,7 @@ fun HourlyWeatherDisplay(
 
 //        Spacer(modifier = Modifier.height(10.dp))
         Text(
-            text = "${weatherData.tempCel}C",
+            text = "${weatherData.tempCel}°C",
             color = textColor,
             fontWeight = FontWeight.Bold
         )

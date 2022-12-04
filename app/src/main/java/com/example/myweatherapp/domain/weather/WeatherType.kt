@@ -1,6 +1,9 @@
 package com.example.myweatherapp.domain.weather
 
+import android.graphics.drawable.Icon
 import androidx.annotation.DrawableRes
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Menu
 import com.example.myweatherapp.R
 
 sealed class WeatherType(
@@ -10,7 +13,7 @@ sealed class WeatherType(
     object ClearSky:WeatherType("Clear sky", R.drawable.ic_sunny)
     object MainlyClear:WeatherType("Mainly Clear", R.drawable.ic_cloudy)
     object PartlyCloudy:WeatherType("Partly Cloudy", R.drawable.ic_cloudy)
-    object Overcast:WeatherType("Overcast", R.drawable.ic_cloudy)
+    object Overcast:WeatherType("Overcast", R.drawable.ic_cloudy  )
     object Foggy:WeatherType("Foggy", R.drawable.ic_very_cloudy)
     object DepositingRimeFog : WeatherType( "Depositing rime fog", R.drawable.ic_very_cloudy)
     object LightDrizzle : WeatherType(
